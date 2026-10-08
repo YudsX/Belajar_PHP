@@ -8,6 +8,7 @@
     $semester = "";
     $hobi = "";
     $status_mahasiswa = "";
+    $tahun_ajaran = "";
 
 // Mengecek apakah form sudah dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asal_sekolah = $_POST["asal_sekolah"];
     $semester = $_POST["semester"];
     $hobi = $_POST["hobi"];
-    $status_mahasiswa = $_POST["Status"];
+    $status_mahasiswa = $_POST["status"];
+    $tahun_ajaran = $_POST["tahun_ajaran"];
 }
 ?>
 
@@ -28,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset="UTF-8">
-    <title>Data Mahasiswa</title>
+    <title>Data Mahasiswa UMMI</title>
 
     <style>
         body {
@@ -133,8 +135,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label>Hobi</label>
         <input type="text" name="hobi">
 
-        <label>Status Mahasiswa</label>
-        <select name="status_mahasiswa" required>
+        <label>Tahun Ajaran</label>
+        <input type="text" name="tahun_ajaran" required>
+
+        <label>Status</label>
+        <select name="status" required>
             <option value="">-- Pilih Status --</option>
             <option value="Aktif">Aktif</option>
             <option value="Tidak Aktif">Tidak Aktif</option>
@@ -179,8 +184,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?= htmlspecialchars($hobi) ?>
             </p>
 
-            <p><strong>Status Mahasiswa:</strong>
+            <p><strong>Status:</strong>
                 <?= htmlspecialchars($status_mahasiswa) ?>
+            </p>
+
+            <p><strong>Tahun Ajaran:</strong>
+                <?= htmlspecialchars($tahun_ajaran) ?>
             </p>
 
         </div>
