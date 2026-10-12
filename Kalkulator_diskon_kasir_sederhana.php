@@ -2,18 +2,18 @@
     // Cek apakah form sudah disubmit oleh pengguna
     if (isset($_POST['hitung'])) {
         
-        // 1. Variabel (4 tipe data) dari Form Input
+        // 1. Variabel (4 tipe data) dari Form Input pengguna nantinya
         $nama_barang  = (string) $_POST['nama_barang'];
         $jumlah_beli  = (int) $_POST['jumlah_beli'];
         $price        = (float) $_POST['price'];
         $member       = isset($_POST['member']) ? true : false; // Boolean
 
-        // 2. Function buatan sendiri
+        // 2. Function untuk menghitung total bayar setelah diskon
         function hitung_total($price, $jumlah_beli, $status_member) {
             $total = $price * $jumlah_beli;
             $diskon = 0;
 
-            // 3. Percabangan
+            // 3. Percabangan untuk menentukan diskon atau tidak nya
             if ($status_member == true) {
                 $diskon = 0.10; // Diskon 10%
             } else {
@@ -127,7 +127,7 @@
         <button type="submit" name="hitung">Hitung Total</button>
     </form>
 
-        <!-- Menampilkan Hasil -->
+        <!-- Form Output -->
         <div class="result">
             <h3>Ringkasan Transaksi</h3>
             <p><strong>Nama/Barang:</strong> <?php echo htmlspecialchars($nama_barang); ?></p>
@@ -138,7 +138,7 @@
                 <h4>Simulasi Harga Kelipatan 1 - 5:</h4>
                 <ul>
                     <?php
-                    // 4. Perulangan (Loop)
+                    // 4. (Loop) untuk menampilkan simulasi harga kelipatan 1 - 5
                     for ($i = 1; $i <= 5; $i++) {
                         $simtotal = $price * $i;
                         echo "<li>Beli " . $i . " pcs: Rp " . number_format($simtotal, 0, ',', '.') . "</li>";
