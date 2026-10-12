@@ -1,4 +1,4 @@
 <!-- <p>Basic echo seperti print</p> -->
- <?php
-echo "Hello, PHP!";
+<?php
+    echo"Hello World";
 ?>

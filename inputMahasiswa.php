@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asal_sekolah = $_POST["asal_sekolah"];
     $semester = $_POST["semester"];
     $hobi = $_POST["hobi"];
-    $status_mahasiswa = $_POST["status"];
-    $tahun_ajaran = $_POST["tahun_ajaran"];
+    $status_mahasiswa = $_POST["Status"];
+    $tahun_ajaran = $_POST["Tahun Ajaran"];
 }
 ?>
 
