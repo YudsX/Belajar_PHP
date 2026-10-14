@@ -6,10 +6,10 @@ $price = '';
 $member = false;
 
 // Variabel ada yang kosong atau nol karena nantinya ketika halaman pertama kali dibuka, sebelum pengguna mengirim form.
-$total = 0;
-$diskon = 0;
-$potongan = 0;
-$pay = 0;
+$total = 0; // int
+$diskon = 0; // float
+$potongan = 0; // int
+$pay = 0; // float
 
 $submitted = false;
 $error = '';
